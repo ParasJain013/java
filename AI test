@@ -1,0 +1,405 @@
+EXPERIMENT-1
+Aim:
+Introduction to PROLOG.
+Theory:
+Prolog is a declarative programming language based on formal logic, particularly first-order logic. Its name stands for "PROgramming in LOGic." In Prolog, you specify what you want to achieve rather than how to achieve it. This is done by defining a set of logical rules and relationships between objects, and then querying these rules to derive answers to specific queries.
+Key features of Prolog include:
+Logic-based programming: Prolog programs consist of facts and rules represented in terms of predicates and clauses. Predicates define relationships between objects, while clauses specify rules and conditions.
+Pattern matching: Prolog uses unification to match patterns in queries with patterns in the knowledge base. This enables flexible querying and inference.
+Backtracking: Prolog employs a depth-first search strategy with backtracking to explore different branches of computation when finding solutions to queries. This allows Prolog to handle non-deterministic computations.
+Built-in search mechanisms: Prolog provides built-in mechanisms for searching through the solution space, including the use of cut (!) to control backtracking and the adoption of various search strategies.
+Uses of Prolog:
+Artificial Intelligence: Prolog is commonly used in artificial intelligence and expert systems due to its ability to represent and manipulate symbolic information effectively.
+Natural Language Processing: Prolog's pattern matching capabilities make it suitable for natural language processing tasks such as parsing and semantic analysis.
+Database Systems: Prolog can be used to query and manipulate databases through its logic-based approach, making it useful in database systems and knowledge representation.
+Problem Solving: Prolog is often employed in solving combinatorial problems, constraint satisfaction problems, and other types of logic-based puzzles.
+Education: Prolog is frequently taught in academic settings to illustrate concepts of logic programming and to introduce students to declarative programming paradigms.
+Overall, Prolog provides a powerful framework for expressing and solving problems in a logical and declarative manner, making it a valuable tool in various domains of computer science and beyond.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXPERIMENT-2
+
+Aim:
+Write Simple Fact for the Statements using Prolog
+Ram Likes Mango.
+Seema is a Girl.
+Bill Likes Cindy.
+Rose is Red.
+John Owns Gold.
+Theory:
+Facts: Facts are statements that assert a relationship between objects. They are typically written as predicate terms.
+Eg: parent(john, mary).
+This fact asserts that "john" is a parent of "mary".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXPERIMENT-3
+Aim:
+Write Predicates, One Converts Centigrade Temperature to Fahrenheit, the other Check If a Temperature is Below Freezing using PROLOG.
+
+Theory:
+Converting Celsius to Fahrenheit: The formula to convert Celsius to Fahrenheit is: F=(9/5)C+32 Where F is the temperature in Fahrenheit and C is the temperature in Celsius.
+Checking if a Temperature is Below Freezing: In the Celsius scale, the freezing point of water is 0°C. So, any temperature below 0°C is considered freezing.
+
+
+
+
+
+
+EXPERIMENT-4
+Aim:
+Write a Program to implement Breath First Search Traversal.
+Theory:
+Representing the Graph: The graph is represented using edge/2 facts, where each fact indicates an edge between two nodes.
+Defining the Goal Condition: The goal/1 predicate defines the condition for the goal node. In your case, it checks if a given node is equal to the goal node.
+BFS Traversal: The bfs/3 predicate initiates the BFS traversal. It calls the bfs_queue/3 predicate with an initial queue containing the start node.
+Base Case: The base case of bfs_queue/3 checks if the current node is the goal node. If it is, it returns the path containing only the goal node.
+Recursive Case: In the recursive case of bfs_queue/3, it explores the neighbors of the current node. It finds all neighbors using findall/3, appends them to the queue, and continues the traversal recursively.
+
+
+
+
+
+
+
+
+
+EXPERIMENT-5
+Aim:
+Write a Program to Implement Water Jug Problem.
+
+Theory:
+The water jug problem, also known as the water pouring problem, is a classic puzzle that involves using two or more jugs of different capacities to measure out a desired amount of water. The problem typically involves determining a sequence of actions (pouring, filling, and emptying) that will result in a particular amount of water being present in one of the jugs.
+Actions: The actions available in the water jug problem typically include:
+Pouring: Transferring water from one jug to another.
+Filling: Filling a jug to its maximum capacity.
+Emptying: Emptying the contents of a jug.
+Constraints:
+The water jugs cannot hold more water than their respective capacities.
+Water cannot be split or combined (i.e., there is no spillage or overflow during pouring).
+Only the actions of pouring, filling, and emptying are allowed.
+Search Algorithm: Solving the water jug problem often involves using a search algorithm, such as depth-first search (DFS) or breadth-first search (BFS), to explore the space of possible states (configurations of water in the jugs) and find a sequence of actions that leads to the desired outcome.
+State Representation: The state of the problem is typically represented as a tuple or list containing the current amount of water in each jug. For example, a state (2, 0) represents that the first jug contains 2 units of water, and the second jug is empty.
+Goal State: The goal state is the state in which one of the jugs contains the desired amount of water, as specified by the problem statement.
+
+
+ 
+
+EXPERIMENT-6
+Aim:
+Write a Program to remove punctuations from the given string.
+Theory:
+To remove punctuations from a given string, we can follow a simple algorithmic approach. Punctuation refers to any non-alphanumeric characters such as commas, periods, exclamation marks, question marks, etc. The aim of the program is to filter out these characters and return a clean string with only alphanumeric characters.
+Here's a theoretical outline of how one might achieve this:
+Input: The program takes a string containing punctuation as input.
+Output: The output is a string without any punctuation marks.
+Algorithm:
+a. Iterate through each character in the input string.
+b. Check if the character is a punctuation mark or not. We can either use a predefined list of punctuation marks or utilize built-in functions/libraries available in the programming language to identify punctuation characters.
+c. If the character is not a punctuation mark, append it to a new string.
+d. Continue this process until all characters in the input string have been examined.
+e. Return the new string without punctuation marks.
+
+
+
+
+
+
+
+
+
+
+
+
+CODE
+# initializing string
+inputString = input("Enter Your String With Punctuations:")
+# printing original string
+print("The original string is : " + inputString)
+# initializing punctuations string
+punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+# Removing punctuations in string
+# Using loop + punctuation string
+for ele in inputString:
+	if ele in punc:
+		inputString = inputString.replace(ele, "")
+# printing result
+print("The string after punctuation filter : " + inputString)
+OUTPUT
+Enter Your String With Punctuations:This!! is/ TestString?@
+The original string is : This!! is/ TestString?@
+The string after punctuation filter : This is TestString
+
+
+
+
+
+
+
+
+
+
+
+
+EXPERIMENT-7
+Aim:
+Write a Program to sort the sentence in alphabetical order
+Theory:
+Sorting a sentence in alphabetical order involves arranging the words within the sentence in ascending order based on their alphabetical order. Here's a theoretical outline of how one might implement this in Python:
+Input: The program takes a sentence as input. A sentence is a string consisting of words separated by spaces.
+Output: The output is the sorted sentence where the words are arranged in alphabetical order.
+Algorithm:
+a. Split the input sentence into individual words.
+b. Convert the letters into lower case.
+c. Sort the words alphabetically.
+c. Join the sorted words back into a single string to form the sorted sentence.
+
+CODE
+
+my_str = input("Enter a string: ")
+words = [word.lower() for word in my_str.split()]
+# sort the list
+words.sort()
+print("The sorted words are:")
+for word in words:
+   print(word, end=" ")
+OUTPUT
+Enter a string: This is to test the Sort Functionality
+The sorted words are:
+functionality is sort test the this to >
+EXPERIMENT-8
+Aim:
+Write a Program to implement hangman game using python.
+Theory:
+Implementing a Hangman game in Python involves creating a program that allows a player to guess letters in a secret word within a limited number of attempts. The game typically consists of a graphical representation of a hanging man, with each incorrect guess resulting in adding a part to the drawing until the player either guesses the word or makes too many incorrect guesses.
+Here's a theoretical outline of how one might implement the Hangman game in Python:
+Initialization:
+Define a list of words to choose from as the secret word.
+Define a list of hangman drawings to represent the progress of the game.
+Initialize variables to track the missed letters, correct letters, the secret word, and the game state.
+Selecting a Secret Word:
+Randomly select a word from the list of words as the secret word.
+Displaying the Game State:
+Create a function to display the hangman drawing corresponding to the number of missed guesses.
+Create a function to display the current state of the guessed letters in the secret word.
+Getting Player Input:
+Create a function to get a letter guess from the player. Validate the input to ensure it is a single letter and hasn't been guessed before.
+Updating Game State:
+Update the game state based on the player's guess: If the letter is in the secret word, reveal the positions of the letter in the word.
+If the letter is not in the secret word, add it to the list of missed letters and update the hangman drawing. Check if the player has won or lost the game.
+Game Loop:
+Implement a loop to continue the game until the player wins or loses.Display the game state after each guess.
+End of Game:
+Determine if the player wants to play again.
+If yes, reset the game state and select a new secret word.
+CODE
+import random
+HANGMAN_PICS = ['''
+  +---+
+      |
+      |
+      |
+     ===''', '''
+  +---+
+  O   |
+      |
+      |
+     ===''', '''
+  +---+
+  O   |
+  |   |
+      |
+     ===''', '''
+  +---+
+  O   |
+ /|   |
+      |
+     ===''', '''
+  +---+
+  O   |
+ /|\  |
+      |
+     ===''', '''
+  +---+
+  O   |
+ /|\  |
+ /    |
+     ===''', '''
+  +---+
+  O   |
+ /|\  |
+ / \  |
+     ===''']
+words = 'ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow deer dog donkey duck eagle ferret fox frog goat goose hawk lion lizard llama mole monkey moose mouse mule newt otter owl panda parrot pigeon python rabbit ram rat raven rhino salmon seal shark sheep skunk sloth snake spider stork swan tiger toad trout turkey turtle weasel whale wolf wombat zebra'.split()
+
+def getRandomWord(wordList):
+    # This function returns a random string from the passed list of strings.
+    wordIndex = random.randint(0, len(wordList) - 1)
+    return wordList[wordIndex]
+def displayBoard(missedLetters, correctLetters, secretWord):
+    print(HANGMAN_PICS[len(missedLetters)])
+    print()
+    print('Missed letters:', end=' ')
+    for letter in missedLetters:
+        print(letter, end=' ')
+    print()
+    blanks = '_' * len(secretWord)
+    for i in range(len(secretWord)): # Replace blanks with correctly guessed letters.
+        if secretWord[i] in correctLetters:
+            blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
+    for letter in blanks: # Show the secret word with spaces in between each letter.
+        print(letter, end=' ')
+    print()
+
+def getGuess(alreadyGuessed):
+    # Returns the letter the player entered. This function makes sure the player entered a single letter and not something else.
+    while True:
+        print('Guess a letter.')
+        guess = input()
+        guess = guess.lower()
+        if len(guess) != 1:
+            print('Please enter a single letter.')
+        elif guess in alreadyGuessed:
+            print('You have already guessed that letter. Choose again.')
+        elif guess not in 'abcdefghijklmnopqrstuvwxyz':
+            print('Please enter a LETTER.')
+        else:
+            return guess
+def playAgain():
+    # This function returns True if the player wants to play again; otherwise, it returns False.
+    print('Do you want to play again? (yes or no)')
+    return input().lower().startswith('y')
+print('H A N G M A N')
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(words)
+gameIsDone = False
+while True:
+    displayBoard(missedLetters, correctLetters, secretWord)
+    # Let the player enter a letter.
+    guess = getGuess(missedLetters + correctLetters)
+    if guess in secretWord:
+        correctLetters = correctLetters + guess
+
+        # Check if the player has won.
+        foundAllLetters = True
+        for i in range(len(secretWord)):
+            if secretWord[i] not in correctLetters:
+                foundAllLetters = False
+                break
+        if foundAllLetters:
+            print('Yes! The secret word is "' + secretWord + '"! You have won!')
+            gameIsDone = True
+    else:
+        missedLetters = missedLetters + guess
+        # Check if player has guessed too many times and lost.
+        if len(missedLetters) == len(HANGMAN_PICS) - 1:
+            displayBoard(missedLetters, correctLetters, secretWord)
+            print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + secretWord + '"')
+            gameIsDone = True
+    # Ask the player if they want to play again (but only if the game is done).
+    if gameIsDone:
+        if playAgain():
+            missedLetters = ''
+            correctLetters = ''
+            gameIsDone = False
+            secretWord = getRandomWord(words)
+        else:
+            break
+
+
+
+OUTPUT
+H A N G M A N
+
+  +---+
+      |
+      |
+      |
+     ===
+
+Missed letters: 
+_ _ _ _ _ 
+Guess a letter.
+m
+
+  +---+
+      |
+      |
+      |
+     ===
+
+Missed letters: 
+m _ _ _ _ 
+Guess a letter.
+o
+
+  +---+
+      |
+      |
+      |
+     ===
+
+Missed letters: 
+m o o _ _ 
+Guess a letter.
+s
+
+  +---+
+      |
+      |
+      |
+     ===
+
+Missed letters: 
+m o o s _ 
+Guess a letter.
+e
+Yes! The secret word is "moose"! You have won!
+Do you want to play again? (yes or no)
+no
+>
